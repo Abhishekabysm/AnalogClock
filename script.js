@@ -2,7 +2,7 @@ function setClockHands() {
   const now = new Date();
   const seconds = now.getSeconds();
   const minutes = now.getMinutes();
-  const hours = now.getHours() % 12;
+  const hours = now.getHours() % 12; //Covert 24-hour format to 12-hour format
 
   const secondDegrees = (seconds / 60) * 360;
   const minuteDegrees = ((minutes + seconds / 60) / 60) * 360;
@@ -35,6 +35,21 @@ function setNumbers() {
   }
 }
 
+// setNumbers();
+// setClockHands();
+// setInterval(setClockHands, 1000);
+
+let digital = document.querySelector(".digital-clock");
+function digitalClock() {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  digital.innerHTML = timeString;
+}
+
 setNumbers();
 setClockHands();
 setInterval(setClockHands, 1000);
+
+setInterval(() => {
+  digitalClock();
+}, 1000);
