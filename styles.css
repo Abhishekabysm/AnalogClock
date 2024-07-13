@@ -72,3 +72,11 @@ h1 {
   /* color: #333; */
   color: #7675ff;
 }
+
+.digital-clock {
+  position: absolute;
+  top: 20vh;
+  font-size: larger;
+  height: fit-content;
+  font-weight: bolder;
+}
